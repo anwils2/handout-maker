@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# This webtool is for lazy DMs to make handouts quickly
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
