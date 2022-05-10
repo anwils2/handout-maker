@@ -7,7 +7,10 @@ function App() {
       <header>
         <h2>Handout Maker</h2>
       </header>
-      <TextInput />
+      <div style={{display:"flex"},{flexDirection:"row"}}>
+        <TextInput />
+        <TextInput />
+      </div>
     </div>
 
   );
