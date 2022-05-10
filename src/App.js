@@ -1,5 +1,5 @@
-import './App.css';
-import TextInput from './components/input';
+import "./App.css";
+import TextInput from "./components/input";
 
 function App() {
   return (
@@ -7,12 +7,11 @@ function App() {
       <header>
         <h2>Handout Maker</h2>
       </header>
-      <div style={{display:"flex"},{flexDirection:"row"}}>
+      <div>
         <TextInput />
         <TextInput />
       </div>
     </div>
-
   );
 }
 
