@@ -1,15 +1,21 @@
-import React from "react";
+import { useState } from "react";
+import { Editor } from "react-draft-wysiwyg";
+import { EditorState } from "draft-js";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 function TextInput() {
-  const [count, setCount] = React.useState(0);
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   return (
     <div className="TextInput">
-      <header className="App-header">
-        <p>User text will be here eventually</p>
-        <button onClick={() => setCount(count + 1)}>Click Me</button>
-      </header>
-      <p>{count}</p>
+      <div>
+        <Editor
+          editorState={editorState}
+          onEditorStateChange={(newEditorState) =>
+            setEditorState(newEditorState)
+          }
+        />
+      </div>
     </div>
   );
 }

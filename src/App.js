@@ -1,7 +1,11 @@
 import "./App.css";
+import { EditorState } from "draft-js";
 import TextInput from "./components/input";
+import HandoutViewer from "./components/handoutViewer";
 
 const backgroundsPath = process.env.PUBLIC_URL + "/backgrounds/";
+
+// push up editorState
 
 function App() {
   return (
@@ -11,15 +15,13 @@ function App() {
       </header>
       <div className="container">
         <div className="row">
-          <div className="bkg-select col">
-            <img src={`${backgroundsPath}pamphlet.jpg`} />
-          </div>
+          <div className="bkg-select col"></div>
           <div className="row">
             <div className="col">
               <TextInput />
             </div>
             <div className="col">
-              <TextInput />
+              <HandoutViewer />
             </div>
           </div>
         </div>
