@@ -2,12 +2,14 @@ import "./App.css";
 import { EditorState } from "draft-js";
 import TextInput from "./components/input";
 import HandoutViewer from "./components/handoutViewer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const backgroundsPath = process.env.PUBLIC_URL + "/backgrounds/";
-
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+  const onEditorStateChange = (editorState) => {
+    setEditorState(editorState);
+  };
 
   return (
     <div>
