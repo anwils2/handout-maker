@@ -2,12 +2,13 @@ import "./App.css";
 import { EditorState } from "draft-js";
 import TextInput from "./components/input";
 import HandoutViewer from "./components/handoutViewer";
-
-const backgroundsPath = process.env.PUBLIC_URL + "/backgrounds/";
-
-// push up editorState
+import { useState } from "react";
 
 function App() {
+  const backgroundsPath = process.env.PUBLIC_URL + "/backgrounds/";
+
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
   return (
     <div>
       <header>
@@ -18,10 +19,13 @@ function App() {
           <div className="bkg-select col"></div>
           <div className="row">
             <div className="col">
-              <TextInput />
+              <TextInput
+                editorState={editorState}
+                setEditorState={setEditorState}
+              />
             </div>
             <div className="col">
-              <HandoutViewer />
+              <HandoutViewer editorState={editorState} />
             </div>
           </div>
         </div>

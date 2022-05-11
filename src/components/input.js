@@ -3,9 +3,7 @@ import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-function TextInput() {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
-
+function TextInput(editorState, setEditorState) {
   return (
     <div className="TextInput">
       <div>

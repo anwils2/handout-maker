@@ -1,15 +1,16 @@
 import React from "react";
+import { Editor } from "react-draft-wysiwyg";
 
 const backgroundsPath = process.env.PUBLIC_URL + "/backgrounds/";
 
-function HandoutViewer() {
+function HandoutViewer(editorState) {
   // props from WYSIWYG comp
-  const [count, setCount] = React.useState(0);
 
   return (
     <div className="HandoutViewer">
       <div>
         <img src={`${backgroundsPath}pamphlet.jpg`} />
+        <Editor editorState={editorState} />
       </div>
     </div>
   );
