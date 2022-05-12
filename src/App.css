@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.holder {
+  position: relative;
+  background: no-repeat url(../public/backgrounds/pamphlet.jpg);
+  background-size: 95%;
+}
+
+.holder > img {
+  vertical-align: top;
+  width: 100%; /* max width */
+  opacity: 0;  /* make it transparent */
+}
+
+.holder > div {
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: 100%;
+}

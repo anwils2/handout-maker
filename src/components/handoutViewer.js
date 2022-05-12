@@ -10,16 +10,18 @@ function HandoutViewer({ editorState, setEditorState }) {
 
   return (
     <div className="HandoutViewer">
-      <div>
+      <div id="holder" className="row holder">
         <img src={`${backgroundsPath}pamphlet.jpg`} />
-        <Editor
-          toolbarHidden
-          editorState={editorState}
-          onEditorStateChange={(newEditorState) => {
-            setEditorState(newEditorState);
-            EditorState.moveFocusToEnd(editorState);
-          }}
-        />
+        <div className="mx-2 centered">
+          <Editor
+            toolbarHidden
+            editorState={editorState}
+            onEditorStateChange={(newEditorState) => {
+              setEditorState(newEditorState);
+              EditorState.moveFocusToEnd(editorState);
+            }}
+          />
+        </div>
       </div>
     </div>
   );

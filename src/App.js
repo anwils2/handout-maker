@@ -3,9 +3,21 @@ import { EditorState } from "draft-js";
 import TextInput from "./components/input";
 import HandoutViewer from "./components/handoutViewer";
 import { useState, useEffect, useRef } from "react";
+import domtoimage from "dom-to-image";
 
 function App() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+  const downloadHandout = () => {
+    domtoimage
+      .toPng(document.getElementById("holder"))
+      .then(function (dataUrl) {
+        var link = document.createElement("a");
+        link.download = "handout.png";
+        link.href = dataUrl;
+        link.click();
+      });
+  };
 
   return (
     <div>
@@ -16,19 +28,22 @@ function App() {
         <div className="row">
           <div className="bkg-select col"></div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <HandoutViewer
                 editorState={editorState}
                 setEditorState={setEditorState}
               />
             </div>
-            <div className="col">
+            <div className="col-6">
               <TextInput
                 editorState={editorState}
                 setEditorState={setEditorState}
               />
             </div>
           </div>
+        </div>
+        <div className="row">
+          <button onClick={downloadHandout}>Download</button>
         </div>
       </div>
     </div>
