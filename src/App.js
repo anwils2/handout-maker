@@ -2,14 +2,10 @@ import "./App.css";
 import { EditorState } from "draft-js";
 import TextInput from "./components/input";
 import HandoutViewer from "./components/handoutViewer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function App() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
-
-  const onEditorStateChange = (editorState) => {
-    setEditorState(editorState);
-  };
 
   return (
     <div>
@@ -21,13 +17,16 @@ function App() {
           <div className="bkg-select col"></div>
           <div className="row">
             <div className="col">
-              <TextInput
+              <HandoutViewer
                 editorState={editorState}
                 setEditorState={setEditorState}
               />
             </div>
             <div className="col">
-              <HandoutViewer editorState={editorState} />
+              <TextInput
+                editorState={editorState}
+                setEditorState={setEditorState}
+              />
             </div>
           </div>
         </div>
