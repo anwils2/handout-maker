@@ -12,7 +12,7 @@ function HandoutViewer({ editorState, setEditorState }) {
     <div className="HandoutViewer">
       <div id="holder" className="row holder">
         <img src={`${backgroundsPath}pamphlet.jpg`} />
-        <div className="mx-2 centered">
+        <div className="m-4 centered">
           <Editor
             toolbarHidden
             editorState={editorState}
