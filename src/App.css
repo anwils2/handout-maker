@@ -46,13 +46,12 @@
 
 .holder > img {
   vertical-align: top;
-  width: 100%; /* max width */
-  opacity: 0;  /* make it transparent */
+  width: 100%;
+  opacity: 0;
 }
 
 .holder > div {
   position: absolute;
   top: 0;
-  width: 90%;
-  height: 90%;
+  width: auto;
 }

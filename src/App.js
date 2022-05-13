@@ -12,7 +12,7 @@ function App() {
     domtoimage
       .toPng(document.getElementById("holder"))
       .then(function (dataUrl) {
-        var link = document.createElement("a");
+        let link = document.createElement("a");
         link.download = "handout.png";
         link.href = dataUrl;
         link.click();
