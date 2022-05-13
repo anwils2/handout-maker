@@ -55,3 +55,7 @@
   top: 0;
   width: auto;
 }
+
+html, body, #root {
+  height: 100%;
+}

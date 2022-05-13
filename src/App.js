@@ -6,8 +6,6 @@ import { useState, useEffect, useRef } from "react";
 import domtoimage from "dom-to-image";
 
 function App() {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
-
   const downloadHandout = () => {
     domtoimage
       .toPng(document.getElementById("holder"))
@@ -29,17 +27,14 @@ function App() {
           <div className="bkg-select col"></div>
           <div className="row">
             <div className="col-6">
-              <HandoutViewer
-                editorState={editorState}
-                setEditorState={setEditorState}
-              />
+              <HandoutViewer />
             </div>
-            <div className="col-6">
+            {/* <div className="col-6">
               <TextInput
                 editorState={editorState}
                 setEditorState={setEditorState}
               />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="row">
