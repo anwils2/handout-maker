@@ -9,33 +9,46 @@ const backgroundsPath = process.env.PUBLIC_URL + "/backgrounds/";
 function DraggableText() {
   // props from WYSIWYG comp
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const [handleVisible, sethandleVisible] = useState(false);
+
+  const handleVisibleOnHover = () => {
+    sethandleVisible(true);
+  };
+
+  const handleVisibleOnHoverExit = () => {
+    sethandleVisible(false);
+  };
 
   return (
-    <Draggable bounds="parent" handle=".dragHandle">
-      <div className="draggableText">
-        <div className="m-1 px-5">
-          <div
-            id="dragHandle"
-            className="dragHandle position-absolute"
-            style={{
-              backgroundColor: "red",
-              width: "40px",
-              height: "20px",
-              opacity: "1",
-              top: "70%",
-              left: "-1%",
-            }}
-          />
-          <Editor
-            toolbarOnFocus
-            placeholder="Click to add some text..."
-            editorState={editorState}
-            onEditorStateChange={(newEditorState) => {
-              setEditorState(newEditorState);
-              EditorState.moveFocusToEnd(editorState);
-            }}
-          />
+    <Draggable handle=".dragHandle">
+      <div
+        className="draggableText m-1 px-5"
+        onMouseOver={handleVisibleOnHover}
+        onMouseOut={handleVisibleOnHoverExit}
+      >
+        <div
+          id="dragHandle"
+          className="dragHandle position-absolute centered"
+          style={{
+            backgroundColor: "red",
+            width: "40px",
+            height: "30px",
+            opacity: `${handleVisible ? "1" : "0"}`,
+            top: "70%",
+            left: "-1%",
+          }}
+        >
+          <span>Drag</span>
         </div>
+        <Editor
+          toolbarOnFocus
+          placeholder="Click to add some text..."
+          editorState={editorState}
+          onEditorStateChange={(newEditorState) => {
+            setEditorState(newEditorState);
+            EditorState.moveFocusToEnd(editorState);
+          }}
+        />
       </div>
     </Draggable>
   );
