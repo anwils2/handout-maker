@@ -50,10 +50,9 @@
   opacity: 0;
 }
 
-.holder > div {
+.draggableText, .textHolder {
   position: absolute;
-  top: 0;
-  width: auto;
+  width: 100%;
 }
 
 html, body, #root {

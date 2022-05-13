@@ -11,16 +11,31 @@ function DraggableText() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   return (
-    <Draggable bounds="parent">
-      <div className="m-1 px-5">
-        <Editor
-          toolbarOnFocus
-          editorState={editorState}
-          onEditorStateChange={(newEditorState) => {
-            setEditorState(newEditorState);
-            EditorState.moveFocusToEnd(editorState);
-          }}
-        />
+    <Draggable bounds="parent" handle=".dragHandle">
+      <div className="draggableText">
+        <div className="m-1 px-5">
+          <div
+            id="dragHandle"
+            className="dragHandle position-absolute"
+            style={{
+              backgroundColor: "red",
+              width: "40px",
+              height: "20px",
+              opacity: "1",
+              top: "70%",
+              left: "-1%",
+            }}
+          />
+          <Editor
+            toolbarOnFocus
+            placeholder="Click to add some text..."
+            editorState={editorState}
+            onEditorStateChange={(newEditorState) => {
+              setEditorState(newEditorState);
+              EditorState.moveFocusToEnd(editorState);
+            }}
+          />
+        </div>
       </div>
     </Draggable>
   );
