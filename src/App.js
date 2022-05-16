@@ -2,10 +2,15 @@ import "./App.css";
 import { EditorState } from "draft-js";
 import TextInput from "./components/input";
 import HandoutViewer from "./components/handoutViewer";
+import DraggableText from "./components/draggableText";
 import { useState, useEffect, useRef } from "react";
 import domtoimage from "dom-to-image";
 
 function App() {
+  const [textElementsOnHandout, setTextElementsOnHandout] = useState([
+    <DraggableText />,
+  ]);
+
   const downloadHandout = () => {
     domtoimage
       .toPng(document.getElementById("holder"))
@@ -17,7 +22,9 @@ function App() {
       });
   };
 
-  const addText = () => {};
+  const addText = () => {
+    setTextElementsOnHandout([...textElementsOnHandout, <DraggableText />]);
+  };
 
   return (
     <div>
@@ -29,7 +36,7 @@ function App() {
           <div className="bkg-select col"></div>
           <div className="row">
             <div className="col-6">
-              <HandoutViewer />
+              <HandoutViewer textElementsOnHandout={textElementsOnHandout} />
             </div>
             <div className="col-6">
               <div className="d-grid gap-2">
