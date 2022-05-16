@@ -7,7 +7,7 @@ import DraggableText from "./draggableText";
 
 const backgroundsPath = process.env.PUBLIC_URL + "/backgrounds/";
 
-function HandoutViewer({ editorState, setEditorState }) {
+function HandoutViewer() {
   // props from WYSIWYG comp
 
   return (

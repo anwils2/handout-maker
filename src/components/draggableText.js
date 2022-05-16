@@ -23,12 +23,12 @@ function DraggableText() {
     <Draggable handle=".dragHandle">
       <div
         className="draggableText m-1 px-5"
-        onMouseOver={handleVisibleOnHover}
+        onMouseOver={sethandleVisible}
         onMouseOut={handleVisibleOnHoverExit}
       >
         <div
           id="dragHandle"
-          className="dragHandle position-absolute centered"
+          className="dragHandle position-absolute"
           style={{
             backgroundColor: "red",
             width: "40px",
