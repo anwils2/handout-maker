@@ -17,6 +17,8 @@ function App() {
       });
   };
 
+  const addText = () => {};
+
   return (
     <div>
       <header>
@@ -29,6 +31,24 @@ function App() {
             <div className="col-6">
               <HandoutViewer />
             </div>
+            <div className="col-6">
+              <div className="d-grid gap-2">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={addText}
+                >
+                  Add Additional Text
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={downloadHandout}
+                >
+                  Download Handout
+                </button>
+              </div>
+            </div>
             {/* <div className="col-6">
               <TextInput
                 editorState={editorState}
@@ -36,9 +56,6 @@ function App() {
               />
             </div> */}
           </div>
-        </div>
-        <div className="row">
-          <button onClick={downloadHandout}>Download</button>
         </div>
       </div>
     </div>
