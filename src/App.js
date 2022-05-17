@@ -2,11 +2,14 @@ import "./App.css";
 import { EditorState } from "draft-js";
 import TextInput from "./components/input";
 import HandoutViewer from "./components/handoutViewer";
+import DraggableText from "./components/draggableText";
 import { useState, useEffect, useRef } from "react";
 import domtoimage from "dom-to-image";
 
 function App() {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const [textElementsOnHandout, setTextElementsOnHandout] = useState([
+    <DraggableText />,
+  ]);
 
   const downloadHandout = () => {
     domtoimage
@@ -19,6 +22,10 @@ function App() {
       });
   };
 
+  const addText = () => {
+    setTextElementsOnHandout([...textElementsOnHandout, <DraggableText />]);
+  };
+
   return (
     <div>
       <header>
@@ -29,21 +36,33 @@ function App() {
           <div className="bkg-select col"></div>
           <div className="row">
             <div className="col-6">
-              <HandoutViewer
-                editorState={editorState}
-                setEditorState={setEditorState}
-              />
+              <HandoutViewer textElementsOnHandout={textElementsOnHandout} />
             </div>
             <div className="col-6">
+              <div className="d-grid gap-2">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={addText}
+                >
+                  Add Additional Text
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={downloadHandout}
+                >
+                  Download Handout
+                </button>
+              </div>
+            </div>
+            {/* <div className="col-6">
               <TextInput
                 editorState={editorState}
                 setEditorState={setEditorState}
               />
-            </div>
+            </div> */}
           </div>
-        </div>
-        <div className="row">
-          <button onClick={downloadHandout}>Download</button>
         </div>
       </div>
     </div>
