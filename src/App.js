@@ -41,10 +41,7 @@ function App() {
 
   return (
     <div>
-      <header>
-        <h2>Handout Maker</h2>
-      </header>
-      <div className="container-fluid">
+      <div className="container-fluid py-5">
         <div className="row">
           <div className="bkg-select col"></div>
           <div className="row">
