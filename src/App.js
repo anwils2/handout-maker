@@ -10,14 +10,19 @@ function App() {
   const [textElementsOnHandout, setTextElementsOnHandout] = useState([
     <DraggableText />,
   ]);
+  const [holderWidth, setHolderWidth] = useState(50);
+  const [holderHeight, setHolderHeight] = useState(50);
 
-  const handoutRef = document.getElementById("holder");
+  function setHolderSize(width, height) {
+    setHolderWidth(width);
+    setHolderHeight(height);
+  }
 
   const downloadHandout = () => {
     domtoimage
-      .toPng(handoutRef, {
-        width: handoutRef.offsetWidth,
-        height: handoutRef.offsetHeight,
+      .toPng(document.getElementById("holder"), {
+        width: holderWidth,
+        height: holderHeight,
       })
       .then(function (dataUrl) {
         let link = document.createElement("a");
@@ -41,7 +46,10 @@ function App() {
           <div className="bkg-select col"></div>
           <div className="row">
             <div className="col-6">
-              <HandoutViewer textElementsOnHandout={textElementsOnHandout} />
+              <HandoutViewer
+                textElementsOnHandout={textElementsOnHandout}
+                setHolderSize={setHolderSize}
+              />
             </div>
             <div className="col-6">
               <div className="d-grid gap-2">
