@@ -28,7 +28,7 @@ function DraggableText() {
       >
         <div
           id="dragHandle"
-          className="dragHandle position-absolute"
+          className="dragHandle position-absolute text-center"
           style={{
             backgroundColor: "red",
             width: "40px",

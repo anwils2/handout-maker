@@ -78,6 +78,11 @@ function App() {
           </div>
         </div>
       </div>
+      <footer>
+        <div className="fixed-bottom bg-secondary text-light text-center py-3">
+          <span>Handout Maker - Andrew Wilson ©2022</span>
+        </div>
+      </footer>
     </div>
   );
 }
