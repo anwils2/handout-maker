@@ -14,7 +14,7 @@ function App() {
   const [holderHeight, setHolderHeight] = useState(50);
   const [bkgIndex, setBkgIndex] = useState(0);
 
-  const backgrounds = ["pamphlet.jpg", "paper.jpg"];
+  const backgrounds = ["pamphlet.jpg", "paper.jpg", "scroll.jpg"];
 
   function setHolderSize(width, height) {
     setHolderWidth(width);
@@ -48,15 +48,43 @@ function App() {
         <div className="row">
           <div className="bkg-select col"></div>
           <div className="row">
-            <div className="col-6">
+            <div className="col-7">
               <HandoutViewer
                 textElementsOnHandout={textElementsOnHandout}
                 setHolderSize={setHolderSize}
                 background={backgrounds[bkgIndex]}
               />
             </div>
-            <div className="col-6">
+            <div className="col-1" />
+            <div className="col-4">
               <div className="d-grid gap-2">
+                <div className="row g-0">
+                  <button
+                    type="button"
+                    className="btn col-2 btn-secondary"
+                    onClick={() => {
+                      setBkgIndex(
+                        bkgIndex === 0 ? backgrounds.length - 1 : bkgIndex - 1
+                      );
+                    }}
+                  >
+                    &#x27E8;
+                  </button>
+                  <div className="col-8 text-center">
+                    <span>Select Background</span>
+                  </div>
+                  <button
+                    type="button"
+                    className="btn col-2 btn-secondary"
+                    onClick={() => {
+                      setBkgIndex(
+                        bkgIndex === backgrounds.length - 1 ? 0 : bkgIndex + 1
+                      );
+                    }}
+                  >
+                    &#x3009;
+                  </button>
+                </div>
                 <button
                   type="button"
                   className="btn btn-secondary"
@@ -71,28 +99,6 @@ function App() {
                 >
                   Download Handout
                 </button>
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={() => {
-                    setBkgIndex(
-                      bkgIndex === 0 ? backgrounds.length - 1 : bkgIndex - 1
-                    );
-                  }}
-                >
-                  Left
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={() => {
-                    setBkgIndex(
-                      bkgIndex === backgrounds.length - 1 ? 0 : bkgIndex + 1
-                    );
-                  }}
-                >
-                  Right
-                </button>
               </div>
             </div>
             {/* <div className="col-6">
@@ -103,11 +109,12 @@ function App() {
             </div> */}
           </div>
         </div>
-        <div className="row bg-secondary text-light text-center py-3">
+      </div>
+      <footer>
+        <div className="fixed-bottom bg-secondary text-light text-center py-3">
           <span>Handout Maker - Andrew Wilson ©2022</span>
         </div>
-      </div>
-      <footer></footer>
+      </footer>
     </div>
   );
 }

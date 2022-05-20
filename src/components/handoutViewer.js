@@ -20,16 +20,9 @@ function HandoutViewer({ textElementsOnHandout, setHolderSize, background }) {
 
   return (
     <div className="HandoutViewer">
-      <div
-        ref={holderRef}
-        id="holder"
-        className="row holder"
-        style={{
-          backgroundImage: `url('${backgroundsPath}${background}`,
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <div id="holder" className="row holder">
         <img
+          ref={holderRef}
           id="note-bkg-img"
           src={`${backgroundsPath}${background}`}
           onLoad={setHolderSizeOnImageLoad}
