@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow-y: auto;
 }
 
 .App-logo {
@@ -39,7 +40,6 @@
 
 .holder {
   position: relative;
-  background: no-repeat url(../public/backgrounds/pamphlet.jpg);
   background-size: 95%;
   background-position: 10px;
 }

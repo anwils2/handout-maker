@@ -12,6 +12,9 @@ function App() {
   ]);
   const [holderWidth, setHolderWidth] = useState(50);
   const [holderHeight, setHolderHeight] = useState(50);
+  const [bkgIndex, setBkgIndex] = useState(0);
+
+  const backgrounds = ["pamphlet.jpg", "paper.jpg"];
 
   function setHolderSize(width, height) {
     setHolderWidth(width);
@@ -41,7 +44,7 @@ function App() {
       <header>
         <h2>Handout Maker</h2>
       </header>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="bkg-select col"></div>
           <div className="row">
@@ -49,6 +52,7 @@ function App() {
               <HandoutViewer
                 textElementsOnHandout={textElementsOnHandout}
                 setHolderSize={setHolderSize}
+                background={backgrounds[bkgIndex]}
               />
             </div>
             <div className="col-6">
@@ -67,6 +71,28 @@ function App() {
                 >
                   Download Handout
                 </button>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() => {
+                    setBkgIndex(
+                      bkgIndex === 0 ? backgrounds.length - 1 : bkgIndex - 1
+                    );
+                  }}
+                >
+                  Left
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() => {
+                    setBkgIndex(
+                      bkgIndex === backgrounds.length - 1 ? 0 : bkgIndex + 1
+                    );
+                  }}
+                >
+                  Right
+                </button>
               </div>
             </div>
             {/* <div className="col-6">
@@ -77,12 +103,11 @@ function App() {
             </div> */}
           </div>
         </div>
-      </div>
-      <footer>
-        <div className="fixed-bottom bg-secondary text-light text-center py-3">
+        <div className="row bg-secondary text-light text-center py-3">
           <span>Handout Maker - Andrew Wilson ©2022</span>
         </div>
-      </footer>
+      </div>
+      <footer></footer>
     </div>
   );
 }
