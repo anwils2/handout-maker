@@ -44,6 +44,7 @@ function DraggableText() {
           toolbarOnFocus
           placeholder="Click to add some text..."
           editorState={editorState}
+          editorStyle={{ fontSize: 30, fontFamily: "CloisterBlack" }}
           onEditorStateChange={(newEditorState) => {
             setEditorState(newEditorState);
             EditorState.moveFocusToEnd(editorState);

@@ -13,7 +13,7 @@ function HandoutViewer({ textElementsOnHandout }) {
   return (
     <div className="HandoutViewer">
       <div id="holder" className="row holder">
-        <img src={`${backgroundsPath}pamphlet.jpg`} />
+        <img id="note-bkg-img" src={`${backgroundsPath}pamphlet.jpg`} />
         <div className="position-absolute">{textElementsOnHandout}</div>
       </div>
     </div>
