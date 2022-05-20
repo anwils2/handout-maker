@@ -11,9 +11,14 @@ function App() {
     <DraggableText />,
   ]);
 
+  const handoutRef = document.getElementById("holder");
+
   const downloadHandout = () => {
     domtoimage
-      .toPng(document.getElementById("holder"))
+      .toPng(handoutRef, {
+        width: handoutRef.offsetWidth,
+        height: handoutRef.offsetHeight,
+      })
       .then(function (dataUrl) {
         let link = document.createElement("a");
         link.download = "handout.png";
