@@ -7,8 +7,10 @@ import DraggableText from "./draggableText";
 
 const backgroundsPath = process.env.PUBLIC_URL + "/backgrounds/";
 
-function HandoutViewer({ textElementsOnHandout, setHolderSize }) {
+function HandoutViewer({ textElementsOnHandout, setHolderSize, background }) {
   const holderRef = useRef(null);
+
+  const backgrounds = ["pamphlet.jpg", "paper.jpg"];
 
   function setHolderSizeOnImageLoad() {
     const width = holderRef.current.offsetWidth;
@@ -18,10 +20,11 @@ function HandoutViewer({ textElementsOnHandout, setHolderSize }) {
 
   return (
     <div className="HandoutViewer">
-      <div ref={holderRef} id="holder" className="row holder">
+      <div id="holder" className="row holder">
         <img
+          ref={holderRef}
           id="note-bkg-img"
-          src={`${backgroundsPath}pamphlet.jpg`}
+          src={`${backgroundsPath}${background}`}
           onLoad={setHolderSizeOnImageLoad}
         />
         <div className="position-absolute">{textElementsOnHandout}</div>

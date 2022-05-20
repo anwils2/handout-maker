@@ -12,6 +12,9 @@ function App() {
   ]);
   const [holderWidth, setHolderWidth] = useState(50);
   const [holderHeight, setHolderHeight] = useState(50);
+  const [bkgIndex, setBkgIndex] = useState(0);
+
+  const backgrounds = ["pamphlet.jpg", "paper.jpg", "scroll.jpg"];
 
   function setHolderSize(width, height) {
     setHolderWidth(width);
@@ -38,21 +41,47 @@ function App() {
 
   return (
     <div>
-      <header>
-        <h2>Handout Maker</h2>
-      </header>
-      <div className="container">
+      <div className="container-fluid py-5">
         <div className="row">
           <div className="bkg-select col"></div>
           <div className="row">
-            <div className="col-6">
+            <div className="col-7">
               <HandoutViewer
                 textElementsOnHandout={textElementsOnHandout}
                 setHolderSize={setHolderSize}
+                background={backgrounds[bkgIndex]}
               />
             </div>
-            <div className="col-6">
+            <div className="col-1" />
+            <div className="col-4">
               <div className="d-grid gap-2">
+                <div className="row g-0">
+                  <button
+                    type="button"
+                    className="btn col-2 btn-secondary"
+                    onClick={() => {
+                      setBkgIndex(
+                        bkgIndex === 0 ? backgrounds.length - 1 : bkgIndex - 1
+                      );
+                    }}
+                  >
+                    &#x27E8;
+                  </button>
+                  <div className="col-8 text-center">
+                    <span>Select Background</span>
+                  </div>
+                  <button
+                    type="button"
+                    className="btn col-2 btn-secondary"
+                    onClick={() => {
+                      setBkgIndex(
+                        bkgIndex === backgrounds.length - 1 ? 0 : bkgIndex + 1
+                      );
+                    }}
+                  >
+                    &#x3009;
+                  </button>
+                </div>
                 <button
                   type="button"
                   className="btn btn-secondary"
