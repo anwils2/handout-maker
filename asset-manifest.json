@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/handout-maker/static/css/main.ca360fce.css",
+    "main.js": "/handout-maker/static/js/main.2626ea56.js",
+    "static/js/787.bf0f05f9.chunk.js": "/handout-maker/static/js/787.bf0f05f9.chunk.js",
+    "static/media/CloisterBlack.ttf": "/handout-maker/static/media/CloisterBlack.0a8dea1a656175f7a896.ttf",
+    "static/media/exmouth_.ttf": "/handout-maker/static/media/exmouth_.0f90ba29d1508f44d398.ttf",
+    "index.html": "/handout-maker/index.html",
+    "main.ca360fce.css.map": "/handout-maker/static/css/main.ca360fce.css.map",
+    "main.2626ea56.js.map": "/handout-maker/static/js/main.2626ea56.js.map",
+    "787.bf0f05f9.chunk.js.map": "/handout-maker/static/js/787.bf0f05f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca360fce.css",
+    "static/js/main.2626ea56.js"
+  ]
+}
