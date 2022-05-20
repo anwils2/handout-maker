@@ -48,6 +48,14 @@ function DraggableText() {
             setEditorState(newEditorState);
             EditorState.moveFocusToEnd(editorState);
           }}
+          toolbar={{
+            fontFamily: {
+              options: ["CloisterBlack", "Exmouth"],
+              className: undefined,
+              component: undefined,
+              dropdownClassName: undefined,
+            },
+          }}
         />
       </div>
     </Draggable>

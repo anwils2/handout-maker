@@ -10,14 +10,24 @@ function App() {
   const [textElementsOnHandout, setTextElementsOnHandout] = useState([
     <DraggableText />,
   ]);
+  const [holderWidth, setHolderWidth] = useState(50);
+  const [holderHeight, setHolderHeight] = useState(50);
+  const [holderRef, setHolderRef] = useState();
+
+  useEffect(() => {
+    let ref = document.getElementById("holder");
+    setHolderRef(ref);
+    setHolderHeight(ref.offsetHeight);
+    setHolderWidth(ref.offsetWidth);
+  }, []);
 
   const handoutRef = document.getElementById("holder");
 
   const downloadHandout = () => {
     domtoimage
-      .toPng(handoutRef, {
-        width: handoutRef.offsetWidth,
-        height: handoutRef.offsetHeight,
+      .toPng(holderRef, {
+        width: holderWidth,
+        height: holderHeight,
       })
       .then(function (dataUrl) {
         let link = document.createElement("a");

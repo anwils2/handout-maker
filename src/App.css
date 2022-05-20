@@ -58,3 +58,13 @@
 html, body, #root {
   height: 100%;
 }
+
+@font-face {
+  font-family: 'CloisterBlack';
+  src: local('CloiserBlack'), url('./fonts/CloisterBlack.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Exmouth';
+  src: local('Exmouth'), url('./fonts/exmouth_.ttf') format('truetype');
+}
