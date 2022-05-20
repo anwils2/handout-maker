@@ -12,20 +12,15 @@ function App() {
   ]);
   const [holderWidth, setHolderWidth] = useState(50);
   const [holderHeight, setHolderHeight] = useState(50);
-  const [holderRef, setHolderRef] = useState();
 
-  useEffect(() => {
-    let ref = document.getElementById("holder");
-    setHolderRef(ref);
-    setHolderHeight(ref.offsetHeight);
-    setHolderWidth(ref.offsetWidth);
-  }, []);
-
-  const handoutRef = document.getElementById("holder");
+  function setHolderSize(width, height) {
+    setHolderWidth(width);
+    setHolderHeight(height);
+  }
 
   const downloadHandout = () => {
     domtoimage
-      .toPng(holderRef, {
+      .toPng(document.getElementById("holder"), {
         width: holderWidth,
         height: holderHeight,
       })
@@ -51,7 +46,10 @@ function App() {
           <div className="bkg-select col"></div>
           <div className="row">
             <div className="col-6">
-              <HandoutViewer textElementsOnHandout={textElementsOnHandout} />
+              <HandoutViewer
+                textElementsOnHandout={textElementsOnHandout}
+                setHolderSize={setHolderSize}
+              />
             </div>
             <div className="col-6">
               <div className="d-grid gap-2">
