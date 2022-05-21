@@ -43,17 +43,8 @@ function App() {
     <div>
       <div className="container-fluid py-5">
         <div className="row">
-          <div className="bkg-select col"></div>
           <div className="row">
-            <div className="col-7">
-              <HandoutViewer
-                textElementsOnHandout={textElementsOnHandout}
-                setHolderSize={setHolderSize}
-                background={backgrounds[bkgIndex]}
-              />
-            </div>
-            <div className="col-1" />
-            <div className="col-4">
+            <div className="col-12 col-lg-4 order-lg-last">
               <div className="d-grid gap-2">
                 <div className="row g-0">
                   <button
@@ -65,7 +56,7 @@ function App() {
                       );
                     }}
                   >
-                    &#x27E8;
+                    &lt;
                   </button>
                   <div className="col-8 text-center">
                     <span>Select Background</span>
@@ -79,7 +70,7 @@ function App() {
                       );
                     }}
                   >
-                    &#x3009;
+                    &gt;
                   </button>
                 </div>
                 <button
@@ -97,6 +88,15 @@ function App() {
                   Download Handout
                 </button>
               </div>
+            </div>
+
+            <div className="col-lg-1" />
+            <div className="col-12 col-lg-7 order-lg-first">
+              <HandoutViewer
+                textElementsOnHandout={textElementsOnHandout}
+                setHolderSize={setHolderSize}
+                background={backgrounds[bkgIndex]}
+              />
             </div>
             {/* <div className="col-6">
               <TextInput
