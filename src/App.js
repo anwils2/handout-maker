@@ -89,7 +89,7 @@ function App() {
             </div>
           </div>
           <div className="col-lg" />
-          <div className="col-12 col-lg-auto order-lg-first">
+          <div className="col-12 col-lg-auto order-lg-first border border-secondary border-3 rounded p-1">
             <HandoutViewer
               textElementsOnHandout={textElementsOnHandout}
               setHolderSize={setHolderSize}
