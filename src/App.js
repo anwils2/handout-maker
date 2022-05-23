@@ -43,8 +43,8 @@ function App() {
     <div>
       <div className="container-fluid">
         <div className="row p-5">
-          <div className="col-12 col-lg-4 order-lg-last">
-            <div className="d-grid gap-2">
+          <div className="col-12 col-xxl-3 order-xxl-last">
+            <div className="d-grid gap-2 py-2">
               <div className="row g-0">
                 <button
                   type="button"
@@ -88,8 +88,8 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="col-lg" />
-          <div className="col-12 col-lg-auto order-lg-first border border-secondary border-3 rounded p-1">
+          <div className="col-xxl" />
+          <div className="col-12 col-xxl-auto order-xxl-first border border-secondary border-3 rounded p-1">
             <HandoutViewer
               textElementsOnHandout={textElementsOnHandout}
               setHolderSize={setHolderSize}
