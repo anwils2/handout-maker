@@ -41,75 +41,72 @@ function App() {
 
   return (
     <div>
-      <div className="container-fluid py-5">
-        <div className="row">
-          <div className="row">
-            <div className="col-12 col-lg-4 order-lg-last">
-              <div className="d-grid gap-2">
-                <div className="row g-0">
-                  <button
-                    type="button"
-                    className="btn col-2 btn-secondary"
-                    onClick={() => {
-                      setBkgIndex(
-                        bkgIndex === 0 ? backgrounds.length - 1 : bkgIndex - 1
-                      );
-                    }}
-                  >
-                    &lt;
-                  </button>
-                  <div className="col-8 text-center">
-                    <span>Select Background</span>
-                  </div>
-                  <button
-                    type="button"
-                    className="btn col-2 btn-secondary"
-                    onClick={() => {
-                      setBkgIndex(
-                        bkgIndex === backgrounds.length - 1 ? 0 : bkgIndex + 1
-                      );
-                    }}
-                  >
-                    &gt;
-                  </button>
+      <div className="container-fluid">
+        <div className="row p-5">
+          <div className="col-12 col-lg-4 order-lg-last">
+            <div className="d-grid gap-2">
+              <div className="row g-0">
+                <button
+                  type="button"
+                  className="btn col-2 btn-secondary"
+                  onClick={() => {
+                    setBkgIndex(
+                      bkgIndex === 0 ? backgrounds.length - 1 : bkgIndex - 1
+                    );
+                  }}
+                >
+                  &lt;
+                </button>
+                <div className="col-8 text-center">
+                  <span>Select Background</span>
                 </div>
                 <button
                   type="button"
-                  className="btn btn-secondary"
-                  onClick={addText}
+                  className="btn col-2 btn-secondary"
+                  onClick={() => {
+                    setBkgIndex(
+                      bkgIndex === backgrounds.length - 1 ? 0 : bkgIndex + 1
+                    );
+                  }}
                 >
-                  Add Additional Text
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={downloadHandout}
-                >
-                  Download Handout
+                  &gt;
                 </button>
               </div>
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={addText}
+              >
+                Add Additional Text
+              </button>
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={downloadHandout}
+              >
+                Download Handout
+              </button>
             </div>
-
-            <div className="col-lg-1" />
-            <div className="col-12 col-lg-7 order-lg-first">
-              <HandoutViewer
-                textElementsOnHandout={textElementsOnHandout}
-                setHolderSize={setHolderSize}
-                background={backgrounds[bkgIndex]}
-              />
-            </div>
-            {/* <div className="col-6">
+          </div>
+          <div className="col-lg" />
+          <div className="col-12 col-lg-auto order-lg-first">
+            <HandoutViewer
+              textElementsOnHandout={textElementsOnHandout}
+              setHolderSize={setHolderSize}
+              background={backgrounds[bkgIndex]}
+            />
+          </div>
+          {/* <div className="col-6">
               <TextInput
                 editorState={editorState}
                 setEditorState={setEditorState}
               />
             </div> */}
-          </div>
         </div>
       </div>
       <footer>
         <div className="fixed-bottom bg-secondary text-light text-center py-3">
-          <span>Handout Maker - Andrew Wilson ©2022</span>
+          <span>Handout Maker - Andrew Wilson</span>
         </div>
       </footer>
     </div>
