@@ -50,13 +50,13 @@
 }
 
 .draggableText, .textHolder {
-  position: relative;
+  position: absolute;
   width: 100%;
 }
 
 html, body, #root {
   height: 100%;
-  width: 99%
+  width: 100%
 }
 
 @font-face {

@@ -19,8 +19,19 @@ function DraggableText() {
     sethandleVisible(false);
   };
 
+  const getRandomOffset = () => {
+    let maxOffset = 100;
+    return Math.floor(Math.random() * (maxOffset + 1));
+  };
+
   return (
-    <Draggable handle=".dragHandle">
+    <Draggable
+      handle=".dragHandle"
+      defaultPosition={{
+        x: getRandomOffset(),
+        y: getRandomOffset(),
+      }}
+    >
       <div
         className="draggableText m-1 px-5"
         onMouseOver={sethandleVisible}
@@ -28,7 +39,7 @@ function DraggableText() {
       >
         <div
           id="dragHandle"
-          className="dragHandle position-absolute text-center"
+          className="dragHandle position-absolute text-center border border-2 border-secondary"
           style={{
             backgroundColor: "red",
             width: "40px",
