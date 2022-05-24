@@ -1,8 +1,10 @@
 # This webtool is for lazy DMs to make handouts quickly
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tool can be accessed on github-pages at https://anwils2.github.io/handout-maker/
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
